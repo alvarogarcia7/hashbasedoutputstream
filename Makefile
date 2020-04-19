@@ -1,5 +1,5 @@
 .PHONY: test
-test: clean
+test:
 	./mvnw test
 
 .PHONY: clean
