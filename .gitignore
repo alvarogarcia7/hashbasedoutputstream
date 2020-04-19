@@ -5,3 +5,6 @@ target
 ## Mac files
 .DS_Store
 
+## Property-based testing, jqwik
+.jqwik-database
+
