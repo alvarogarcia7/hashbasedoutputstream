@@ -3,8 +3,6 @@ package com.example.hashbasedoutputstream;
 import org.hamcrest.core.Is;
 import org.hamcrest.core.IsNot;
 import org.junit.Test;
-
-import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 import static org.junit.Assert.*;
@@ -21,7 +19,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void when_printing_a_1_byte_message_the_result_changes() throws NoSuchAlgorithmException, IOException {
+	public void when_printing_a_1_byte_message_the_result_changes() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream full = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream empty = new ByteArrayHashOutputStream();
 
@@ -33,7 +31,7 @@ public class ByteArrayHashOutputStreamTest {
 
 
 	@Test
-	public void single_vs_array() throws NoSuchAlgorithmException, IOException {
+	public void single_vs_array() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream inOnePart = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream inTwoParts = new ByteArrayHashOutputStream();
 
@@ -48,7 +46,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void when_printing_a_message_the_result_changes() throws NoSuchAlgorithmException, IOException {
+	public void when_printing_a_message_the_result_changes() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream full = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream empty = new ByteArrayHashOutputStream();
 
@@ -59,7 +57,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void calculating_to_string_does_not_affect_the_hash() throws NoSuchAlgorithmException, IOException {
+	public void calculating_to_string_does_not_affect_the_hash() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream inOnePart = new ByteArrayHashOutputStream();
 
 		inOnePart.write("aa".getBytes());
@@ -70,7 +68,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void calculating_to_string_does_not_affect_the_hash_neither_with_more_than_one_block() throws NoSuchAlgorithmException, IOException {
+	public void calculating_to_string_does_not_affect_the_hash_neither_with_more_than_one_block() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream inOnePart = new ByteArrayHashOutputStream();
 
 		inOnePart.write("1234567890123456789012345678901234567890".getBytes());
@@ -81,7 +79,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void calculating_to_string_does_not_affect_the_hash_neither_with_one_block() throws NoSuchAlgorithmException, IOException {
+	public void calculating_to_string_does_not_affect_the_hash_neither_with_one_block() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream hashOutputStream = new ByteArrayHashOutputStream();
 
 		hashOutputStream.write("12345678901234567890123456789012".getBytes());
@@ -92,7 +90,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void when_printing_a_message_in_multiple_parts_it_is_the_same() throws NoSuchAlgorithmException, IOException {
+	public void when_printing_a_message_in_multiple_parts_it_is_the_same() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream inOnePart = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream inTwoParts = new ByteArrayHashOutputStream();
 
@@ -108,7 +106,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void newline_matters() throws NoSuchAlgorithmException, IOException {
+	public void newline_matters() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream a = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream b = new ByteArrayHashOutputStream();
 
@@ -120,7 +118,7 @@ public class ByteArrayHashOutputStreamTest {
 	}
 
 	@Test
-	public void failing_test() throws NoSuchAlgorithmException, IOException {
+	public void failing_test() throws NoSuchAlgorithmException {
 		final ByteArrayHashOutputStream a = new ByteArrayHashOutputStream();
 		final ByteArrayHashOutputStream b = new ByteArrayHashOutputStream();
 
